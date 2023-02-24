@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins";
+  font-size: 1.8rem;
+  background: #024873;
+}
+
+._formPage {
+  padding: 11rem 9rem 27.1rem;
+}
+@media only screen and (max-width: 768px) {
+  ._formPage {
+    padding: 1rem;
+  }
+}
+._formPage_container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+._formPage_wrapper {
+  margin: 0 auto;
+  max-width: 76.8rem;
+  padding: 8rem 1.8rem;
+  background: #fff;
+}
+._formPage_wrapper .MuiStepLabel-label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: "Poppins";
+}
+@media only screen and (max-width: 768px) {
+  ._formPage_wrapper .MuiStepLabel-label {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Poppins";
+  }
+}
+._formPage_wrapper .css-14w0e8k-MuiStack-root {
+  margin: 1.6rem 0 0.8rem;
+}
+._formPage_wrapper .css-q8hpuo-MuiFormControl-root {
+  margin: 1.6rem 0 0.8rem;
+}
+._formPage_wrapper .MuiSvgIcon-root {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+._formPage_data {
+  border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+._formPage_errors {
+  font-size: 1.6rem;
+  color: #f2545b;
+  display: block;
+}
+._formPage_content {
+  margin-top: 5rem;
+}
+._formPage_content h2 {
+  color: green;
+}
+@media only screen and (max-width: 768px) {
+  ._formPage_data_label {
+    font-size: 1.4rem;
+  }
+}
+._formPage .css-14lo706 {
+  font-size: 0.95rem !important;
+}
+._formPage_buttons {
+  border-radius: 0.4rem;
+  background: linear-gradient(270deg, #59c0d6, #59c0d6);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: block;
+  font-weight: 600;
+  color: #000;
+  padding: 1rem 2.4rem;
+  font-size: 1.5rem;
+  margin: 3.6rem 0 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+._formPage_buttons:last-child {
+  margin-left: 1.6rem;
+}
+._formPage_userInformation-columns {
+  border: unset;
+}
+
+/*# sourceMappingURL=styles.css.map */
