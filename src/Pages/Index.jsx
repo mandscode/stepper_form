@@ -143,7 +143,7 @@ const StepperForm = () => {
             setActiveStep(activeStep + 1);
             setFormErrors(false);
             localStorage.setItem("values", JSON.stringify(values));
-            setFormValues(JSON.parse(localStorage.getItem('values'))a)
+            setFormValues(JSON.parse(localStorage.getItem('values')))
           } else {
             alert('Form submitted!');
           }
