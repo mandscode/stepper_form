@@ -36,7 +36,7 @@ const StepperForm = () => {
     
     let label = ["First Name", "Middle Name", "Last Name","Mobile No", "Email","Birthday","Age","Blood Group","Height","Weight", "Gender","Marital Status","Address Line 1","Address Line 2","City","State","Country",'Pin Code']
     
-    const [formValues, setFormValues] = useState(values);
+    const [formValues, setFormValues] = useState();
     const [formLabel, setFormLabel] = useState(label);
     
     let state = [ "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttarakhand", "Uttar Pradesh", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Lakshadweep", "Puducherry"]
@@ -143,8 +143,7 @@ const StepperForm = () => {
             setActiveStep(activeStep + 1);
             setFormErrors(false);
             localStorage.setItem("values", JSON.stringify(values));
-            const b = document.getElementsByClassName("_formPage_data_label");
-            // console.log("bbbb", b.filter(e=>e.textContent == ))
+            setFormValues(JSON.parse(localStorage.getItem('values'))a)
           } else {
             alert('Form submitted!');
           }
@@ -239,7 +238,6 @@ const StepperForm = () => {
             const { value } = e.target;
             setSelectedState(value);
         };
-
         
         switch (step) {
           case 0:
