@@ -45,12 +45,6 @@ body {
     font-family: "Poppins";
   }
 }
-._formPage_wrapper .css-14w0e8k-MuiStack-root {
-  margin: 1.6rem 0 0.8rem;
-}
-._formPage_wrapper .css-q8hpuo-MuiFormControl-root {
-  margin: 1.6rem 0 0.8rem;
-}
 ._formPage_wrapper .MuiSvgIcon-root {
   width: 1.8rem;
   height: 1.8rem;
@@ -69,6 +63,9 @@ body {
 }
 ._formPage_content h2 {
   color: green;
+}
+._formPage-item {
+  margin: 1.6rem 0 0.8rem !important;
 }
 @media only screen and (max-width: 768px) {
   ._formPage_data_label {

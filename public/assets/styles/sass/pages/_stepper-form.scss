@@ -23,23 +23,10 @@
             }
         }
 
-        .css-14w0e8k-MuiStack-root {
-            margin: 1.6rem 0 0.8rem;
-        }
-
-        .css-q8hpuo-MuiFormControl-root {
-            margin: 1.6rem 0 0.8rem;
-        }
-
         .MuiSvgIcon-root {
             width: 1.8rem;
             height: 1.8rem;
         }
-
-        // .css-sghohy-MuiButtonBase-root-MuiButton-root {
-        //     font-size: 1.6rem;
-        //     margin-top: 3.6rem;
-        // }
     }
 
     &_data {
@@ -58,6 +45,10 @@
         h2 {
             color: green;
         }
+    }
+
+    &-item {
+        margin: 1.6rem 0 0.8rem !important;
     }
 
     &_data_label {

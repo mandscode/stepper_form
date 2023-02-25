@@ -36,7 +36,7 @@ const StepperForm = () => {
     
     let label = ["First Name", "Middle Name", "Last Name","Mobile No", "Email","Birthday","Age","Blood Group","Height","Weight", "Gender","Marital Status","Address Line 1","Address Line 2","City","State","Country",'Pin Code']
     
-    const [formValues, setFormValues] = useState(JSON.parse(localStorage.getItem('values')));
+    const [formValues, setFormValues] = useState(values);
     const [formLabel, setFormLabel] = useState(label);
     
     let state = [ "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttarakhand", "Uttar Pradesh", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Lakshadweep", "Puducherry"]
@@ -63,8 +63,10 @@ const StepperForm = () => {
 
             if (!val.trim()) {
                 errors.val = 'Mobile No is required field';
-            } else if (val < 10) {
-                errors.val = 'Mobile No is invalid';
+            } 
+            
+            if (val.length < 10) {
+                errors.val = 'Please enter valid 10 digit Mobile Number';
             }
 
             if (!email.trim()) {
@@ -124,6 +126,10 @@ const StepperForm = () => {
 
             if (!pinCode.trim()) {
                 errors.pinCode = 'Pin Code is required field';
+            }
+
+            if (pinCode.length < 6) {
+                errors.pinCode = 'Please enter valid 6 digit Pin code';
             }
         // if (!password.trim()) {
         //   errors.password = 'Password is required';
@@ -321,7 +327,7 @@ const StepperForm = () => {
                         />
                         {formErrors.email && <span className='_formPage_errors'>{formErrors.email}</span>}
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} sx={{margin:'1.6rem 0 0.8rem'}}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <Stack spacing={6}>
                                 <DesktopDatePicker
@@ -347,13 +353,15 @@ const StepperForm = () => {
                             margin="normal"
                             name="age"
                             value={age}
-                            inputProps={{ maxLength: 2, fontSize: 14 }}
                             onChange={onInputChange}
+                            // inputProps={{ maxLength: 2, fontSize: 14}}
+                            // InputLabelProps={{style: {fontSize: 14}}}
+                            inputProps={{maxLength: 2, style: {fontSize: 14}}}
                             InputLabelProps={{style: {fontSize: 14}}}
                         />
                         {formErrors.age && <span className='_formPage_errors'>{formErrors.age}</span>}
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} sx={{margin:'1.6rem 0 0.8rem'}}>
                         <FormControl fullWidth>
                             <InputLabel id="bloodGroup">Blood Group</InputLabel>
                             <Select
@@ -364,6 +372,7 @@ const StepperForm = () => {
                                 onChange={inputChange}
                                 inputProps={{style: {fontSize: 14}}}
                                 InputLabelProps={{style: {fontSize: 14}}}
+                                sx={{fontSize: '1.4rem'}}
                             >
                                 <MenuItem value={'A+'} onClick={() => setBloodGroup('A+')}>A RhD positive (A+)</MenuItem>
                                 <MenuItem value={'A-'} onClick={() => setBloodGroup('A-')}>A RhD negative (A-)</MenuItem>
@@ -505,7 +514,7 @@ const StepperForm = () => {
                             />
                             {formErrors.city && <span className='_formPage_errors'>{formErrors.city}</span>}
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} md={6} sx={{margin:'1.6rem 0 0.8rem'}}>
                             <FormControl fullWidth>
                                 <InputLabel id="state">State</InputLabel>
                                 <Select
@@ -526,7 +535,7 @@ const StepperForm = () => {
                             </FormControl>
                             {formErrors.selectedState && <span className='_formPage_errors'>{formErrors.selectedState}</span>}
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} md={6} sx={{margin:'1.6rem 0 0.8rem'}}>
                             <FormControl fullWidth>
                                 <InputLabel id="country">Country</InputLabel>
                                 <Select
@@ -537,6 +546,7 @@ const StepperForm = () => {
                                     onChange={(e)=>{setCountry(e.target.value)}}
                                     inputProps={{style: {fontSize: 14}}}
                                     InputLabelProps={{style: {fontSize: 14}}}
+                                    sx={{fontSize: '1.4rem'}}
                                 >
                                     {
                                         allCountry && allCountry.map((countries, index) => (
@@ -606,7 +616,7 @@ const StepperForm = () => {
                         </Stepper>
                         {activeStep === steps.length ? (
                             <>
-                                <Typography sx={{ mt: 2, mb: 1 }}>
+                                <Typography sx={{ mt: 2, mb: 1, textAlign:'center', fontSize:'14px' }}>
                                     All steps completed - you&apos;re finished
                                     {/* {console.log(activeStep, steps.length)} */}
                                 </Typography>
